@@ -1,3 +1,4 @@
+import './SeasonDisplay.css'
 import React from "react";
 const seasonConfig = {
     Summer: {
@@ -20,10 +21,10 @@ const getSeason = (lat, month) => {
 const SeasonDisplay = props => {
   const season = getSeason(props.lat, new Date().getMonth());
   const {text, iconName}= seasonConfig[season];
- return <div>
-     <i className={`${iconName} outline icon`}></i>
+ return <div className={`season-display ${season}`}>
+     <i className={` top-left massive ${iconName} outline icon`}></i>
       <h1>{text}</h1>
-      <i className={`${iconName} outline icon`}></i>
+      <i className={`bottom-right  massive ${iconName} outline icon`}></i>
   </div>;
 };
 
